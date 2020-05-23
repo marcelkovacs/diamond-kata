@@ -1,15 +1,27 @@
+const{Diamond} = require('./diamond');
 describe("Print Diamond", function () {
-    it ("soll A zurückgeben, wenn A gegeben", function() {
-        var diamond = new Diamond('A');
 
+    var diamond;
+
+    beforeEach(function() {
+        diamond = new Diamond('A');
+    });
+   
+    it ("soll A zurückgeben, wenn A gegeben", function() {
+        
         expect(diamond.toString()).toEqual('A');
+        
     });
 
     describe("Line", function() {
         it("soll Zeile für A ausgeben", function() {
-            var diamond = new Diamond('A');
-
             expect(diamond.line('A')).toEqual('A');
+        });
+    });
+
+    describe("Inner Space", function () {
+        it("soll Leerzeichen ausgeben, wenn B gegeben", function() {
+            expect(diamond.innerSpace('B')).toEqual(' ');
         });
     });
 });
