@@ -11,9 +11,8 @@ Diamond.prototype.line = function (value) {
 };
 
 Diamond.prototype.innerSpace = function (value) {
-    if (value === "C") {
-        return '   ';
-    }
-
-    return ' ';
+    var charCode = value.charCodeAt(0);
+    var index = charCode - 65;
+    var spaces = 2 * index - 1;
+    return new Array(spaces + 1).join(' ');
 };
