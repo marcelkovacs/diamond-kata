@@ -1,5 +1,7 @@
-function Diamond () {};
+function Diamond (value) {
+    this.value = value;
+}
 
 Diamond.prototype.toString = function() {
-    return 'A';
+    return this.value;
 };
