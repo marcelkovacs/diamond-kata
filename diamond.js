@@ -6,6 +6,6 @@ Diamond.prototype.toString = function (){
     return this.value;
 };
 
-Diamond.prototype.line = function() {
-    return 'A';
+Diamond.prototype.line = function(value) {
+    return value;
 };
