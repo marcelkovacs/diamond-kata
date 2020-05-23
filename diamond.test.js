@@ -41,6 +41,11 @@ describe("Print Diamond", function () {
         it("soll zwei Leerzeichen voranstellen, wenn C die aktuelle Zeile ist und E die breiteste Stelle ist", function() {
             expect(diamond.outerSpace('C', 'E')).toEqual('  ');
         });
+
+        it("soll Ausnahme auswerfen, wenn es mit D und C aufgerufen wird", function() {
+            var outerSpace = diamond.outerSpace.bind(diamond, 'D', 'C');
+            expect(outerSpace).toThrow('Ungültige Kombination von Argumenten');
+        });
     });
 
     describe("Get Index Of", function() {
