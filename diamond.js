@@ -27,6 +27,9 @@ Diamond.prototype.outerSpace = function (current, widest) {
 };
 
 Diamond.prototype.getIndexOf = function (char) {
+    if (false === /^[A-Z]$/.test(char)) {
+        throw new Error('Ungültiges Argumentt');
+    }
     var codeOfA = 'A'.charCodeAt(0);
     return char.charCodeAt(0) - codeOfA + 1;
 };

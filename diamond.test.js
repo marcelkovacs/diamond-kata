@@ -47,5 +47,11 @@ describe("Print Diamond", function () {
         it("soll 1 ausgeben, wenn A gegben ist", function() {
             expect(diamond.getIndexOf('A')).toEqual(1);
         });
+
+        it("soll Ausnahme werfen, wenn 4 gegeben ist", function() {
+            var getIndexOf = diamond.getIndexOf.bind(diamond, 4);
+
+            expect(getIndexOf).toThrow('Ungültiges Argument');
+        });
     });
 });
