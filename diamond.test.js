@@ -23,5 +23,9 @@ describe("Print Diamond", function () {
         it("soll Leerzeichen ausgeben, wenn B gegeben", function() {
             expect(diamond.innerSpace('B')).toEqual(' ');
         });
+
+        it("soll drei Leerzeichen ausgeben, wenn C gegeben", function() {
+            expect(diamond.innerSpace('C')).toEqual('   ');
+        });
     });
 });

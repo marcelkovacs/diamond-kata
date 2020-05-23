@@ -10,6 +10,10 @@ Diamond.prototype.line = function (value) {
     return value;
 };
 
-Diamond.prototype.innerSpace = function () {
+Diamond.prototype.innerSpace = function (value) {
+    if (value === "C") {
+        return '   ';
+    }
+
     return ' ';
 };
