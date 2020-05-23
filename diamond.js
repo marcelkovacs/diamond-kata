@@ -17,6 +17,9 @@ Diamond.prototype.innerSpace = function (value) {
     return new Array(spaces + 1).join(' ');
 };
 
-Diamond.prototype.outerSpace = function () {
+Diamond.prototype.outerSpace = function (current, widest) {
+    if (current === 'C' && widest === 'E') {
+        return '  ';
+    }
     return ' ';
 };

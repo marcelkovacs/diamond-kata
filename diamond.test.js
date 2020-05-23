@@ -37,5 +37,9 @@ describe("Print Diamond", function () {
         it("soll ein Leerzeichen voranstellen, wenn B die aktuelle Zeile ist und C die breiteste Stelle ist", function() {
             expect(diamond.outerSpace('B', 'C')).toEqual(' ');
         });
+
+        it("soll zwei Leerzeichen voranstellen, wenn C die aktuelle Zeile ist und E die breiteste Stelle ist", function() {
+            expect(diamond.outerSpace('C', 'E')).toEqual('  ');
+        });
     });
 });
