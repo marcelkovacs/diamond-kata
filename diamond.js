@@ -11,15 +11,15 @@ Diamond.prototype.line = function (value) {
 };
 
 Diamond.prototype.innerSpace = function (value) {
-    var charCode = value.charCodeAt(0);
-    var index = charCode - 65;
-    var spaces = 2 * index - 1;
+    
+    var index = this.getIndexOf(value);
+    var spaces = 2 * (index - 1) - 1;
     return new Array(spaces + 1).join(' ');
 };
 
 Diamond.prototype.outerSpace = function (current, widest) {
-    var currentValue = current.charCodeAt(0) - 64;
-    var widestValue = widest.charCodeAt(0) - 64;
+    var currentValue = this.getIndexOf(current);
+    var widestValue = this.getIndexOf(widest);
 
     var spaces = widestValue - currentValue;
 
