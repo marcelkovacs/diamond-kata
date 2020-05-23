@@ -25,3 +25,7 @@ Diamond.prototype.outerSpace = function (current, widest) {
 
     return new Array(spaces + 1).join(' ');
 };
+
+Diamond.prototype.getIndexOf = function () {
+    return 1;
+};

@@ -42,4 +42,10 @@ describe("Print Diamond", function () {
             expect(diamond.outerSpace('C', 'E')).toEqual('  ');
         });
     });
+
+    describe("Get Index Of", function() {
+        it("soll 1 ausgeben, wenn A gegben ist", function() {
+            expect(diamond.getIndexOf('A')).toEqual(1);
+        });
+    });
 });
