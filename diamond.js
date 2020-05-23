@@ -18,8 +18,10 @@ Diamond.prototype.innerSpace = function (value) {
 };
 
 Diamond.prototype.outerSpace = function (current, widest) {
-    if (current === 'C' && widest === 'E') {
-        return '  ';
-    }
-    return ' ';
+    var currentValue = current.charCodeAt(0) - 64;
+    var widestValue = widest.charCodeAt(0) - 64;
+
+    var spaces = widestValue - currentValue;
+
+    return new Array(spaces + 1).join(' ');
 };
