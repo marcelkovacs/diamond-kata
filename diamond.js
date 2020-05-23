@@ -18,12 +18,12 @@ Diamond.prototype.innerSpace = function (value) {
 };
 
 Diamond.prototype.outerSpace = function (current, widest) {
-    if (current === 'D' && widest === 'C') {
-        throw new Error('Ungültige Kombination von Argumenten');
-    }
-
     var currentValue = this.getIndexOf(current);
     var widestValue = this.getIndexOf(widest);
+
+    if (currentValue > widestValue) {
+        throw new Error('Ungültige Kombination von Argumenten')
+    }
 
     var spaces = widestValue - currentValue;
 
