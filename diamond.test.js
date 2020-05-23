@@ -32,4 +32,10 @@ describe("Print Diamond", function () {
             expect(diamond.innerSpace('A')).toEqual('');
         });
     });
+
+    describe("Outer Space", function() {
+        it("soll ein Leerzeichen voranstellen, wenn B die aktuelle Zeile ist und C die breiteste Stelle ist", function() {
+            expect(diamond.outerSpace('B', 'C')).toEqual(' ');
+        });
+    });
 });
