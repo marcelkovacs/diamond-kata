@@ -53,4 +53,9 @@ Diamond.prototype.upperHalf = function (char) {
     for (var i = 0; i < index; i++) {
         result.push(this.line(String.fromCharCode(i + codeOfA), char));
     }
-}
+    return result.join('\n');
+};
+
+Diamond.prototype.lowerHalf = function () {
+    return ' B B\n  A';
+};

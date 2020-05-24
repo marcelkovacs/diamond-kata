@@ -73,4 +73,11 @@ describe("Print Diamond", function () {
             expect(diamond.upperHalf('B')).toEqual(' A\nB B');
         });
     });
+
+    describe("Untere Hälfte", function() {
+        it("soll ' B B\n  A' ausgeben, wenn C die breiteste Stelle ist", function() {
+            var input = ['  A', ' B B', 'C   C'];
+            expect(diamond.lowerHalf(input)).toEqual(' B B\n  A');
+        });
+    });
 });
