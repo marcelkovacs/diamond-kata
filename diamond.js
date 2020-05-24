@@ -6,8 +6,11 @@ Diamond.prototype.toString = function () {
     return this.value;
 };
 
-Diamond.prototype.line = function (value) {
-    return value;
+Diamond.prototype.line = function (current, widest) {
+    var outerSpace = this.outerSpace(current, widest);
+    var innerSpace = this.innerSpace(current);
+
+    return outerSpace + current + innerSpace + current;
 };
 
 Diamond.prototype.innerSpace = function (value) {

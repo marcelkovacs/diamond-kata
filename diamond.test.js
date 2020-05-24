@@ -14,9 +14,15 @@ describe("Print Diamond", function () {
     });
 
     describe("Line", function() {
-        it("soll Zeile für A ausgeben", function() {
-            expect(diamond.line('A')).toEqual('A');
+        it("soll ' C   C' zurückgeben, wenn C und D gegeben sind", function () {
+            expect(diamond.line('C', 'D')).toEqual(' C   C');
         });
+
+        it("soll 'D     D' zurückgeben, wenn D und D gegeben", function () {
+            expect(diamond.line('D', 'D')).toEqual('D     D');
+        });
+
+
     });
 
     describe("Inner Space", function () {
