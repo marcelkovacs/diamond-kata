@@ -3,10 +3,13 @@ function Diamond (value) {
 };
 
 Diamond.prototype.toString = function () {
-    if (this.value === 'A') {
-        return this.value;
+    var result = this.upperHalf(this.value);
+    var lowerHalf = this.lowerHalf(this.value);
+
+    if (lowerHalf) {
+        result += '\n' + lowerHalf;
     }
-    return '  A\n B B\nC   C\n B B\n  A';
+    return result;
 };
 
 Diamond.prototype.line = function (current, widest) {
