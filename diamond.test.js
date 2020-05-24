@@ -18,11 +18,13 @@ describe("Print Diamond", function () {
             expect(diamond.line('C', 'D')).toEqual(' C   C');
         });
 
-        it("soll 'D     D' zurückgeben, wenn D und D gegeben", function () {
+        it("soll 'D     D' zurückgeben, wenn D und D gegeben sind", function () {
             expect(diamond.line('D', 'D')).toEqual('D     D');
         });
 
-
+        it("soll 'A' ausgeben, wenn A und B gegeben sind", function () {
+            expect(diamond.line('A', 'B')).toEqual(' A');
+        });
     });
 
     describe("Inner Space", function () {
