@@ -10,11 +10,12 @@ Diamond.prototype.line = function (current, widest) {
     var outerSpace = this.outerSpace(current, widest);
     var innerSpace = this.innerSpace(current);
 
-    if (current === 'A') {
-        return ' A';
-    }
+    var line = outerSpace + current;
 
-    return outerSpace + current + innerSpace + current;
+    if (innerSpace) {
+        line += innerSpace + current;
+    }
+    return line;
 };
 
 Diamond.prototype.innerSpace = function (value) {
