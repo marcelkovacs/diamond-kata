@@ -46,6 +46,11 @@ Diamond.prototype.getIndexOf = function (char) {
     return char.charCodeAt(0) - codeOfA + 1;
 };
 
-Diamond.prototype.upperHalf = function () {
-    return ' A\nB B';
+Diamond.prototype.upperHalf = function (char) {
+    var index = this.getIndexOf(char);
+    var result = [];
+    var codeOfA = 'A'.charCodeAt(0);
+    for (var i = 0; i < index; i++) {
+        result.push(this.line(String.fromCharCode(i + codeOfA), char));
+    }
 }
