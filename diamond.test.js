@@ -67,4 +67,10 @@ describe("Print Diamond", function () {
             expect(getIndexOf).toThrow('Ungültiges Argument');
         });
     });
+
+    describe("Obere Hälfte", function() {
+        it("soll ' A\nB B' ausgeben, wenn B die breiteste Stelle ist", function() {
+            expect(diamond.upperHalf('B')).toEqual(' A\nB B');
+        });
+    });
 });

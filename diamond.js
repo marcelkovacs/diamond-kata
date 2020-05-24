@@ -45,3 +45,7 @@ Diamond.prototype.getIndexOf = function (char) {
     var codeOfA = 'A'.charCodeAt(0);
     return char.charCodeAt(0) - codeOfA + 1;
 };
+
+Diamond.prototype.upperHalf = function () {
+    return ' A\nB B';
+}
