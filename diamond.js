@@ -56,6 +56,12 @@ Diamond.prototype.upperHalf = function (char) {
     return result.join('\n');
 };
 
-Diamond.prototype.lowerHalf = function () {
-    return ' B B\n  A';
+Diamond.prototype.lowerHalf = function (char) {
+    var index = this.getIndexOf(char);
+    var result = [];
+    var codeOfA = 'A'.charCodeAt(0);
+    for(var i = index - 2; i >= 0; i--) {
+        result.push(this.line(String.fromCharCode(i + codeOfA), char));
+    };
+    return result.join('\n');
 };
