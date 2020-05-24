@@ -6,12 +6,20 @@ describe("Print Diamond", function () {
     beforeEach(function() {
         diamond = new Diamond('A');
     });
-   
-    it ("soll A zurückgeben, wenn A gegeben", function() {
-        
-        expect(diamond.toString()).toEqual('A');
-        
+
+    describe("To String", function () {
+        it("soll A ausgeben, wenn A gegeben ist", function () {
+            expect(diamond.toString()).toEqual('A');
+        });
+
+        it("soll '  A\n B B\nC   C\n B B\n  A' ausgeben, wenn C gegeben ist", function () {
+            var diamond = new Diamond('C');
+            var result = '  A\n B B\nC   C\n B B\n  A';
+            expect(diamond.toString()).toEqual(result);
+        });
     });
+   
+    
 
     describe("Line", function() {
         it("soll ' C   C' zurückgeben, wenn C und D gegeben sind", function () {

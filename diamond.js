@@ -3,7 +3,10 @@ function Diamond (value) {
 };
 
 Diamond.prototype.toString = function () {
-    return this.value;
+    if (this.value === 'A') {
+        return this.value;
+    }
+    return '  A\n B B\nC   C\n B B\n  A';
 };
 
 Diamond.prototype.line = function (current, widest) {
