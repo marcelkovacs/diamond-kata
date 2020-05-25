@@ -77,6 +77,7 @@ Diamond.prototype.lowerHalf = function (lines) {
     return result.join('\n')
 };
 
+
 module.exports = {
     Diamond
 }
