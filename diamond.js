@@ -1,5 +1,6 @@
 function Diamond (value) {
     this.value = value;
+    this.codeOfA = 'A'.charCodeAt(0);
 };
 
 Diamond.prototype.toString = function () {
@@ -46,7 +47,7 @@ Diamond.prototype.outerSpace = function (current, widest) {
 
 Diamond.prototype.getIndexOf = function (char) {
     if (false === /^[A-Z]$/.test(char)) {
-        throw new Error('Ungültiges Argumentt');
+        throw new Error('Ungültiges Argument');
     }
     var codeOfA = 'A'.charCodeAt(0);
     return char.charCodeAt(0) - codeOfA + 1;
@@ -71,3 +72,9 @@ Diamond.prototype.lowerHalf = function (char) {
     };
     return result.join('\n');
 };
+
+module.exports = {
+    Diamond
+}
+
+

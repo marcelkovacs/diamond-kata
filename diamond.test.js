@@ -1,4 +1,4 @@
-const{Diamond} = require('./diamond');
+const{Diamond} = require("./diamond.js");
 describe("Print Diamond", function () {
 
     var diamond;
