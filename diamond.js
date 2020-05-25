@@ -4,12 +4,14 @@ function Diamond (value) {
 };
 
 Diamond.prototype.toString = function () {
-    var result = this.upperHalf(this.value);
-    var lowerHalf = this.lowerHalf(this.value);
+    var lines = this.upperHalf(this.value);
+    var result = lines.join('\n');
+    var lowerHalf = this.lowerHalf(lines);
 
     if (lowerHalf) {
         result += '\n' + lowerHalf;
     }
+
     return result;
 };
 
@@ -56,21 +58,23 @@ Diamond.prototype.getIndexOf = function (char) {
 Diamond.prototype.upperHalf = function (char) {
     var index = this.getIndexOf(char);
     var result = [];
-    var codeOfA = 'A'.charCodeAt(0);
+    
     for (var i = 0; i < index; i++) {
-        result.push(this.line(String.fromCharCode(i + codeOfA), char));
+        result.push(this.line(String.fromCharCode(i + this.codeOfA), char));
     }
-    return result.join('\n');
+    return result;
 };
 
-Diamond.prototype.lowerHalf = function (char) {
-    var index = this.getIndexOf(char);
+Diamond.prototype.lowerHalf = function (lines) {
     var result = [];
-    var codeOfA = 'A'.charCodeAt(0);
-    for(var i = index - 2; i >= 0; i--) {
-        result.push(this.line(String.fromCharCode(i + codeOfA), char));
-    };
-    return result.join('\n');
+    
+    if(lines && lines.length > 1) {
+        for (var i = lines.length - 2; i >= 0; i--) {
+            result.push(lines[i]);
+        }
+    }
+
+    return result.join('\n')
 };
 
 module.exports = {
